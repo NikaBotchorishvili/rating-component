@@ -2,12 +2,14 @@ type RatingProps = {
 	rating: number | null;
 	setRating: React.Dispatch<React.SetStateAction<number | null>>;
 	setCompleted: React.Dispatch<React.SetStateAction<boolean>>;
+    icon: string
 };
-function Rating({ rating, setRating, setCompleted }: RatingProps) {
-	return (
-		<>
+function Rating({ rating, setRating, setCompleted, icon }: RatingProps) {
+
+        return (
+		<section className="flex flex-col items-start p-5 bg-darkBlue rounded-xl gap-y-8">
 			<img
-				src="icon-star.svg"
+				src={icon}
 				className="pb-4 bg-[rgb(32,49,59)] pt-3 px-3 box-content rounded-full"
 				alt=""
 			/>
@@ -74,7 +76,7 @@ function Rating({ rating, setRating, setCompleted }: RatingProps) {
 			>
 				SUBMIT
 			</button>
-		</>
+		</section>
 	);
 }
 
